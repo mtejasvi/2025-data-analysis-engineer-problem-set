@@ -1,0 +1,13 @@
+Find libraries from the 2016 circulation year that have no email address provided but have their notice preference set to email. In your solution, output their home library code.
+
+Table: library_usage
+
+select distinct home_library_code from library_usage where provided_email_address = 'FALSE' and notice_preference_definition = 'email'
+
+Solution
+--------------
+home_library_code
+E9
+P7
+R3
+X
