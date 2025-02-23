@@ -1,0 +1,13 @@
+Find how many times each artist appeared on the Spotify ranking list.
+Output the artist name along with the corresponding number of occurrences.
+Order records by the number of occurrences in descending order.
+
+
+select count(artist) as counts,artist from spotify_worldwide_daily_song_ranking group by artist order by count(artist) desc
+
+counts	artist
+9	Kendrick Lamar
+5	Ed Sheeran
+2	Khalid
+2	Manuel Turizo
+2	Matoma
