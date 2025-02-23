@@ -1,0 +1,14 @@
+Compare each employee's salary with the average salary of the corresponding department.
+Output the department, first name, and salary of employees along with the average salary of that department.
+
+Table: employee
+SELECT e.first_name, 
+       e.salary, 
+       d.avg_salary,
+       d.department
+FROM employee e
+JOIN (
+    SELECT department, AVG(salary) AS avg_salary
+    FROM employee
+    GROUP BY department
+) d ON e.department = d.department;
