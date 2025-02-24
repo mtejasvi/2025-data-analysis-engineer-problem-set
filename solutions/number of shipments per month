@@ -1,0 +1,17 @@
+Write a query that will calculate the number of shipments per month. 
+The unique key for one shipment is a combination of shipment_id and sub_id. Output the year_month in format YYYY-MM and the number of shipments in that month.
+
+SELECT 
+    FORMAT(shipment_date, 'yyyy-MM') AS year_month,
+    COUNT(DISTINCT CONCAT(shipment_id, '_', sub_id)) AS num_shipments
+FROM 
+    amazon_shipment
+GROUP BY 
+    FORMAT(shipment_date, 'yyyy-MM')
+ORDER BY 
+    year_month;
+
+output
+year_month	num_shipments
+2021-08	3
+2021-09	6
